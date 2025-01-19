@@ -54,32 +54,27 @@ npm install
 3. Configurar la base de datos
 
 Crea una base de datos MySQL llamada credit_cards e importa el archivo SQL inicial (si se proporciona):
-
+```
 mysql -u <tu_usuario> -p credit_cards < schema.sql
-
+```
 4. Configurar variables de entorno
 
 Crea un archivo .env en el directorio raíz y define las credenciales:
-
+```
 MYSQL_HOST=<tu_host>
 MYSQL_USER=<tu_usuario>
 MYSQL_PASSWORD=<tu_contraseña>
 MYSQL_DATABASE=credit_cards
-
+```
 5. Ejecutar localmente
 
 Inicia el backend:
-
+```
 npm start
-
+```
 El backend estará disponible en http://localhost:3000.
 
-
-Claro, a continuación te detallo el contenido recomendado para el archivo .gitignore y un ejemplo completo de README.md con instrucciones claras para configurar, lanzar y publicar el proyecto en GitHub.
-.gitignore
-
-El archivo .gitignore debe incluir archivos y directorios que no deseas subir al repositorio, como dependencias locales, configuraciones sensibles y datos específicos del entorno. Un ejemplo típico:
-
+unknowd
 # Node.js
 node_modules/
 npm-debug.log*
