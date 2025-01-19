@@ -21,6 +21,9 @@ Este proyecto es una solución completa para validar tarjetas de crédito y déb
 ## 📂 Estructura del Proyecto
 
 project-root/
+
+'''
+
 ├── src/
 │   ├── api/
 │   │   ├── cardValidation.js           # Lógica para validar tarjetas
@@ -40,6 +43,7 @@ project-root/
 ├── .gitignore                           # Archivos ignorados en git
 └── README.md                            # Documentación
 
+'''
 2. Instalar dependencias
 
 Navega al directorio raíz del proyecto y ejecuta:
