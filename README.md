@@ -113,27 +113,6 @@ docker-compose.override.yml
 .gitignore
 
 Si utilizas Docker o configuraciones específicas, añade las reglas necesarias.
-README.md
-
-Un buen README.md debe proporcionar información clara sobre el proyecto, cómo configurarlo, lanzarlo, y publicarlo. Aquí tienes un ejemplo adaptado para este proyecto:
-
-# Credit Card Validator System
-
-Este proyecto es una solución completa para validar tarjetas de crédito y débito, verificar su estado (funcional o no funcional), y separar tarjetas según tipo. Incluye un backend con Node.js y MySQL, y un frontend que interactúa con el backend.
-
-## 🚀 Características
-- Validación de tarjetas de crédito y débito.
-- Conexión con una base de datos MySQL para verificar y separar datos.
-- Integración con GitHub Pages para el frontend y AWS/Google Cloud para el backend.
-
----
-
-## 🛠️ Requisitos previos
-1. **Node.js** (v14 o superior)
-2. **MySQL**
-3. **Git** (para control de versiones)
-4. **Docker** (opcional, para contenedores)
-5. **AWS CLI** / **Google Cloud CLI** (según el despliegue que elijas)
 
 ---
 
@@ -168,38 +147,41 @@ project-root/
 ### 1. Clonar el repositorio
 Clona el repositorio en tu máquina local:
 
-```bash
+bash
+
+```
 git clone https://github.com/<TU-USUARIO>/<TU-REPOSITORIO>.git
 cd <TU-REPOSITORIO>
-
+```
 2. Instalar dependencias
 
 Navega al directorio raíz del proyecto y ejecuta:
-
+```
 npm install
-
+```
 3. Configurar la base de datos
 
 Crea una base de datos MySQL llamada credit_cards e importa el archivo SQL inicial (si se proporciona):
-
+```
 mysql -u <tu_usuario> -p credit_cards < schema.sql
-
+```
 4. Configurar variables de entorno
 
 Crea un archivo .env en el directorio raíz y define las credenciales:
-
+```
 MYSQL_HOST=<tu_host>
 MYSQL_USER=<tu_usuario>
 MYSQL_PASSWORD=<tu_contraseña>
 MYSQL_DATABASE=credit_cards
-
+```
 5. Ejecutar localmente
 
 Inicia el backend:
-
+```
 npm start
-
+```
 El backend estará disponible en http://localhost:3000.
+
 🌐 Despliegue
 Frontend en GitHub Pages
 
@@ -239,19 +221,26 @@ Backend y Frontend en Google Cloud Run
 
 Base de datos MySQL: Configura Google Cloud SQL y usa sus credenciales en .env.
 
-Dockerizar el backend:
+#Dockerizar el backend:
 
-    Construye la imagen Docker:
+Construye la imagen Docker:
+    
+```
+docker build -t gcr.io/<PROJECT-ID>/credit-card-validator.
 
-    docker build -t gcr.io/<PROJECT-ID>/credit-card-validator .
+```
 
-Desplegar en Google Cloud Run:
+#Desplegar en Google Cloud Run:
 
-    gcloud run deploy credit-card-validator \
-      --image gcr.io/<PROJECT-ID>/credit-card-validator \
-      --platform managed
+gcloud run deploy credit-card-validator \
+```
+--image gcr.io/<PROJECT-ID>/credit-card-validator \
+```
+```
+--platform managed
 
-    Tu aplicación completa estará accesible en una URL como https://<app>.run.app.
+```
+Tu aplicación completa estará accesible en una URL como https://<app>.run.app.
 
 📂 Archivos Adicionales
 
