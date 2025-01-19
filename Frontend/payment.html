@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Procesar Pago</title>
+</head>
+<body>
+  <header>
+    <h1>Procesar Pago</h1>
+    <button id="logout-btn">Cerrar Sesión</button>
+  </header>
+  <main>
+    <form id="payment-form">
+      <input type="text" id="card-number" placeholder="Número de Tarjeta" required />
+      <input type="number" id="amount" placeholder="Monto" required />
+      <button type="submit">Procesar</button>
+    </form>
+    <div id="payment-result"></div>
+  </main>
+  <script src="scripts/payment.js"></script>
+</body>
+</html>

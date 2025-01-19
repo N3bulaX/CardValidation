@@ -14,3 +14,27 @@ async function validateCard(cardNumber) {
 }
 
 module.exports = validateCard;
+
+const pool = require('../db/dbConfig');
+
+exports.getCards = async (req, res) => {
+  try {
+    const [rows] = await pool.query('SELECT * FROM cards');
+    res.json(rows);
+  } catch (err) {
+    res.status(500).json({ message: 'Error al obtener las tarjetas', error: err.message });
+  }
+};
+
+exports.addCard = async (req, res) => {
+  const { card_number, card_type, balance } = req.body;
+  try {
+    const [result] = await pool.query(
+      'INSERT INTO cards (card_number, card_type, balance) VALUES (?, ?, ?)',
+      [card_number, card_type, balance]
+    );
+    res.status(201).json({ id: result.insertId, message: 'Tarjeta añadida con éxito' });
+  } catch (err) {
+    res.status(500).json({ message: 'Error al añadir la tarjeta', error: err.message });
+  }
+};
