@@ -1,0 +1,12 @@
+{
+  "name": "card-validator",
+  "version": "1.0.0",
+  "description": "Validación de tarjetas de crédito y consulta de saldo",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}
