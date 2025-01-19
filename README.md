@@ -20,7 +20,25 @@ Este proyecto es una solución completa para validar tarjetas de crédito y déb
 
 ## 📂 Estructura del Proyecto
 
-project-root/ ├── src/ │ ├── api/ # Lógica del backend │ ├── db/ # Configuración de la base de datos │ ├── manualInput/ # Entrada y validaciones manuales │ ├── utils/ # Utilidades comunes │ └── index.js # Punto de entrada del backend ├── config/ # Variables de configuración ├── frontend/ # Archivos del frontend ├── Dockerfile # Configuración para contenedores ├── package.json # Dependencias del backend ├── .gitignore # Archivos a ignorar por Git ├── .env # Variables de entorno └── README.md # Este archivo
+project-root/
+├── src/
+│   ├── api/
+│   │   ├── cardValidation.js           # Lógica para validar tarjetas
+│   │   └── balanceService.js            # Lógica para consultar saldos
+│   ├── db/
+│   │   └── dbConfig.js                  # Configuración de la base de datos MySQL
+│   ├── manualInput/
+│   │   ├── manualCardValidation.js      # Validación de tarjetas manualmente
+│   │   ├── cardDataSeparator.js         # Separación de tarjetas de débito y crédito
+│   │   └── functionalStatus.js          # Determinación de funcionalidad
+│   ├── utils/
+│   │   └── requestHandler.js            # Manejo de peticiones HTTP
+│   └── index.js                         # Punto de entrada principal del proyecto
+├── config/
+│   ├── config.js                        # Configuración global
+├── package.json                         # Dependencias y scripts
+├── .gitignore                           # Archivos ignorados en git
+└── README.md                            # Documentación
 
 2. Instalar dependencias
 
